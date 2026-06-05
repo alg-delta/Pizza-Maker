@@ -7,15 +7,15 @@ def create_db():
         db.drop_all() # видаляє всі таблиці (для навчання)
         db.create_all()  # створює заново
 
-    if not Dough.query.first():
-        # ТИПИ тіста
-        dough1 = Dough(name="Класичне Тісто", description="Звичайне тісто з дріжджами. Тонке та пухке.", price=4.0,
-                                image="images/DOUGH1.png")
-        dough2 = Dough(name="Бездрізджове Тісто", description="Тісто на кефірі, без дріжджів. Листкове та хрустке.", price=5.8,
-                                image="images/DOUGH2.png")
+        if not Dough.query.first():
+            # ТИПИ тіста
+            dough1 = Dough(name="Класичне Тісто", description="Звичайне тісто з дріжджами. Тонке та пухке.", price=4.0,
+                                    image="images/DOUGH1.png")
+            dough2 = Dough(name="Бездрізджове Тісто", description="Тісто на кефірі, без дріжджів. Листкове та хрустке.", price=5.8,
+                                    image="images/DOUGH2.png")
 
-        # Додаємо всі суші в чергу (session) БД
-        db.session.add_all([dough1, dough2])
+            # Додаємо всі суші в чергу (session) БД
+            db.session.add_all([dough1, dough2])
 
 
 
@@ -30,8 +30,8 @@ def create_db():
             main7 = Main(name="Солодий Гострий", price=2.6, image="images/M7.png")
             main8 = Main(name="Без Соусу", price=0.0, image="images/nil.png")
 
-        # Додаємо всі головні інгредієнти в чергу (session) БД
-        db.session.add_all([main1, main2, main3, main4, main5, main6, main7, main8])
+            # Додаємо всі головні інгредієнти в чергу (session) БД
+            db.session.add_all([main1, main2, main3, main4, main5, main6, main7, main8])
 
 
 
@@ -54,8 +54,8 @@ def create_db():
             dop15 = Dop(name="Кукурудза", price=1.0, image="images/D15.png")
             dop16 = Dop(name="Оливки", price=1.2, image="images/D16.png")
 
-        # Додаємо всі доповнення в чергу (session) БД
-        db.session.add_all([dop1, dop2, dop3, dop4, dop5, dop6, dop7, dop8, dop9, dop10, dop11, dop12, dop13, dop14, dop15, dop16])
+            # Додаємо всі доповнення в чергу (session) БД
+            db.session.add_all([dop1, dop2, dop3, dop4, dop5, dop6, dop7, dop8, dop9, dop10, dop11, dop12, dop13, dop14, dop15, dop16])
 
 
         # Зберігаємо всі зміни з черги (сесії) у БД
